@@ -33,6 +33,15 @@ type MyPick<T, K extends keyof T> = {
   [k in K]: T[k]
 }
 
+/*
+
+- K extends keyof T
+  - T型のプロパティ名を含む型を生成する
+- [k in K]: T[k]
+  - Kをkとして反復して型を生成する
+
+*/
+
 /* _____________ テストケース _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
 
