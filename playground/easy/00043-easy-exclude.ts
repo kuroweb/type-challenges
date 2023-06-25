@@ -18,7 +18,14 @@
 
 /* _____________ ここにコードを記入 _____________ */
 
-type MyExclude<T, U> = any
+type MyExclude<T, U> = T extends U ? never : T
+
+/*
+
+- T extends U ? never : T
+  - Tにユニオン型を指定した場合は、プロパティで反復して結果の型を生成する
+
+*/
 
 /* _____________ テストケース _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
