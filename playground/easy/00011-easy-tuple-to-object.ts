@@ -24,6 +24,15 @@ type TupleToObject<T extends readonly (string | number)[]> = {
   [P in T[number]]: P
 }
 
+/*
+
+- T extends readonly (string | number)[]
+  - Tがreadonlyな配列(要素はstring or number)であることを要求する
+- P in T[number]
+  - array型なTの要素をPとして反復して型を生成する
+
+*/
+
 /* _____________ テストケース _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
 
