@@ -33,6 +33,15 @@ type MyReadonly<T> = {
   readonly [k in keyof T]: T[k];
 }
 
+/*
+
+- readonly
+  - readonlyなプロパティを定義する
+- k in keyof K
+  - Kが持つプロパティをkとして反復して型を生成する
+
+*/
+
 /* _____________ テストケース _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
 
