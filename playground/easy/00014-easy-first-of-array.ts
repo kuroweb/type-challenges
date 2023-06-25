@@ -24,6 +24,15 @@
 
 type First<T extends any[]> = T extends [] ? never : T[0]
 
+/*
+
+- T extends any[]
+  - Tがany[]であることを要求する
+- T extends [] ? never : T[0]
+  - Tが空配列のときにnever, 要素が存在する場合に最初の要素を持つ型を生成する
+
+*/
+
 /* _____________ テストケース _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
 
