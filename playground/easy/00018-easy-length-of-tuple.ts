@@ -22,7 +22,19 @@
 
 /* _____________ ここにコードを記入 _____________ */
 
-type Length<T> = any
+type Length<T extends readonly any[]> = T['length']
+
+/*
+
+- T extends readonly any[]
+  - readonlyな配列型をTに要求する
+  - MEMO:
+    - any[] => 任意の配列型を要求
+    - [] => 空配列を要求 (any[]と[]は別物)
+- T['length']
+  - Tの要素数で型を生成する
+
+*/
 
 /* _____________ テストケース _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
