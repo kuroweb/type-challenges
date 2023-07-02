@@ -20,7 +20,7 @@
 
 /* _____________ ここにコードを記入 _____________ */
 
-type TupleToUnion<T> = any
+export type TupleToUnion<T> = T extends Array<infer K> ? K : never
 
 /* _____________ テストケース _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
