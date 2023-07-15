@@ -23,7 +23,9 @@
 
 /* _____________ ここにコードを記入 _____________ */
 
-declare function PromiseAll(values: any): any
+declare function PromiseAll<T extends any[]>(values: readonly [...T]): Promise<{
+  [P in keyof T]: T[P] extends Promise<infer R> | infer R ? R : never
+}>
 
 /* _____________ テストケース _____________ */
 import type { Equal, Expect } from '@type-challenges/utils'
